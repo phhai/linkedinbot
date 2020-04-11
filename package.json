@@ -1,0 +1,34 @@
+{
+  "name": "linkedinbot",
+  "version": "1.0.0",
+  "description": "This is a linkedin bot which help us build linkedin connect",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phhai/linkedinbot.git"
+  },
+  "keywords": [
+    "linkedin",
+    "bot",
+    "connect",
+    "link",
+    "post",
+    "comment"
+  ],
+  "author": "hai.pham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phhai/linkedinbot/issues"
+  },
+  "homepage": "https://github.com/phhai/linkedinbot#readme",
+  "dependencies": {
+    "@sentry/node": "^5.15.4",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "sleep": "^6.1.0"
+  }
+}
