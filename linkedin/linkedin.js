@@ -17,6 +17,7 @@ const HEADERS = {
 const NUMBER_OF_PEOPLE_PER_PAGE = 10;
 
 getIndustryLeaders = async (page) => {
+  console.log('Getting list industry leaders');
   let params = {
     'count':NUMBER_OF_PEOPLE_PER_PAGE,
     'filters':'List(resultType->PEOPLE,serviceCategory->602)',
@@ -30,6 +31,7 @@ getIndustryLeaders = async (page) => {
 }
 
 getSoftwareEngineers = async (page) => {
+  console.log('Getting list software engineers');
   let params = {
     'count':NUMBER_OF_PEOPLE_PER_PAGE,
     'filters':'List(resultType->PEOPLE,industry->96|4)',
@@ -43,6 +45,7 @@ getSoftwareEngineers = async (page) => {
 }
 
 addConnection = async (profileId, trackingId) => {
+  console.log('Adding connection to profileId/trackingId:', profileId, trackingId);
   let isAddConnectionSuccessed = false;
   const url = "https://www.linkedin.com/voyager/api/voyagerGrowthNormInvitations"
 
@@ -60,12 +63,13 @@ addConnection = async (profileId, trackingId) => {
       headers: HEADERS,
     })
     .then(function (response) {
-      console.log(response);
       if (response.status == 201) {
+        console.log('Added a connection successfully!')
         isAddConnectionSuccessed = true;
       }
     });
   } catch (e) {
+    console.log('Failed to add a connection!')
     Sentry.captureException(e);
   }
   return isAddConnectionSuccessed;

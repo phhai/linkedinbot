@@ -9,6 +9,7 @@ const { readConfig, writeConfig } = require('./lib/storage')
 const PENDING_TIME_TO_ADD_CONNECTION = 5 * 60 * 1000;
 
 const runBot = async () => {
+  console.log('-------------Starting linkedin bot------------');
   let config = readConfig();
   config.number_of_connect_last_time = 0;
   let listPeople = [];
@@ -33,9 +34,11 @@ const runBot = async () => {
         config.number_of_connect_last_time++;
         config.total_connect++;
       }
+      console.log(config);
     }
     sleep.msleep(PENDING_TIME_TO_ADD_CONNECTION);
   }
+  console.log('-------------End linkedin bot------------');
   config.page++;
   writeConfig(config);
 }
